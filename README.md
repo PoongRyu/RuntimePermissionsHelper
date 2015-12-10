@@ -25,7 +25,7 @@ repositories {
     jcenter()
 }
 
-compile 'com.github.dubulee:expandtextview:0.1.0'
+compile 'com.github.dubulee:runtimepermissionshelper:0.1.1'
 ```
 
 # How to use - RX Ver.
