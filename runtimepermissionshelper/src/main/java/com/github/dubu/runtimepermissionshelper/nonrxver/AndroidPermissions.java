@@ -1,4 +1,4 @@
-package com.github.dubu.runtimepermissionshelper;
+package com.github.dubu.runtimepermissionshelper.nonrxver;
 
 import android.app.Activity;
 import android.content.Context;

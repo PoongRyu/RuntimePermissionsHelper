@@ -13,9 +13,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.github.dubu.runtimepermissionshelper.AndroidPermissions;
-import com.github.dubu.runtimepermissionshelper.Checker;
-import com.github.dubu.runtimepermissionshelper.Result;
+import com.github.dubu.runtimepermissionshelper.nonrxver.AndroidPermissions;
+import com.github.dubu.runtimepermissionshelper.nonrxver.Checker;
+import com.github.dubu.runtimepermissionshelper.nonrxver.Result;
+import com.github.dubu.runtimepermissionshelper.rxver.RxPermissions;
+
+import rx.Subscriber;
+import rx.functions.Action1;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -37,6 +42,37 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+
+        RxPermissions.getInstance(this)
+                .request(Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                        Manifest.permission.READ_EXTERNAL_STORAGE)
+                .subscribe(
+                        new Subscriber<Boolean>() {
+                            @Override
+                            public void onCompleted() {
+
+                            }
+
+                            @Override
+                            public void onError(Throwable e) {
+
+                            }
+
+                            @Override
+                            public void onNext(Boolean aBoolean) {
+                                if(aBoolean) {
+                                    Toast.makeText(MainActivity.this,
+                                            "RX Permissions OK",
+                                            Toast.LENGTH_SHORT).show();
+                                }
+                                else {
+                                    Toast.makeText(MainActivity.this,
+                                            "Permission denied, can't enable the camera ",
+                                            Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
 
 
         AndroidPermissions.check(this)

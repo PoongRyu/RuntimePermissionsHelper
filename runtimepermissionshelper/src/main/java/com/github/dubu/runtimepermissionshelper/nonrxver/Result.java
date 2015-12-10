@@ -1,4 +1,4 @@
-package com.github.dubu.runtimepermissionshelper;
+package com.github.dubu.runtimepermissionshelper.nonrxver;
 
 import android.content.pm.PackageManager;
 import android.text.TextUtils;
