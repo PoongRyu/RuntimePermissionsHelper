@@ -34,7 +34,7 @@ publish {
     userOrg = 'dubulee'
     groupId = 'com.github.dubulee'
     artifactId = 'runtimepermissionshelper'
-    publishVersion = '0.1.0'
+    publishVersion = '0.1.1'
     desc = 'Android Runtie Permissions Helper'
     website = 'https://github.com/DUBULEE/RuntimePermissionsHelper'
     issueTracker = "${website}/issues"
