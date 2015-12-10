@@ -1,0 +1,37 @@
+apply plugin: 'com.android.library'
+//apply plugin: 'com.novoda.bintray-release'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+}
+
+
+//publish {
+//    userOrg = 'dubulee'
+//    groupId = 'com.github.dubulee'
+//    artifactId = 'runtimepermissionshelper'
+//    publishVersion = '0.1.0'
+//    desc = 'Android Runtie Permissions Helper'
+//    website = 'https://github.com/DUBULEE/RuntimePermissionsHelper'
+//    issueTracker = "${website}/issues"
+//    repository = "${website}.git"
+//}
