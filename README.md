@@ -38,7 +38,10 @@ protected void onCreate(Bundle savedInstanceState) {
 
     // Must be done during an initialization phase like onCreate
     RxPermissions.getInstance(this)
-        .request(Manifest.permission.CALL_PHONE)
+        .request(Manifest.permission.CALL_PHONE,
+                        Manifest.permission.ACCESS_FINE_LOCATION,
+                        Manifest.permission.READ_CONTACTS,
+                        Manifest.permission.READ_CALENDAR)
         .subscribe(new Subscriber<Boolean>() {
                             @Override
                             public void onCompleted() {
